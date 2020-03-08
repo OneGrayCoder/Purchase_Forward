@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Purchase_Forward:war exploded">
+    <output-path>D:/ProgramFiles/TOMCAT/apache-tomcat-8.5.50/webapps/Purchase_Forward/</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Purchase_Forward/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Purchase_Forward" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/jstl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/standard.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/c3p0-0.9.5.5.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/mchange-commons-java-0.2.19.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-8.0.19.jar" />
+          <element id="library" level="project" name="commons-fileupload-1.3" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
