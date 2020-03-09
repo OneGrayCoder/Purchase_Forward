@@ -5,6 +5,7 @@ import com.aki.purchaseforward.dao.impl.UserDaoImpl;
 import com.aki.purchaseforward.pojo.User;
 import com.aki.purchaseforward.service.UserService;
 
+import javax.servlet.annotation.WebServlet;
 import java.util.List;
 
 /**
@@ -15,23 +16,24 @@ public class UserServiceImpl  implements UserService {
     UserDao users = new UserDaoImpl();
 
     @Override
-    public boolean checkUser(User user) {
-        return users.checkUser(user);
+    public boolean regist(User user){
+        return users.regist(user);
     }
 
     @Override
-    public List<User> findAllUser(){
-        return users.findUser();
-    }
-
-    @Override
-    public int userNumber() {
-        return users.userNumber();
+    public String securityPass(String password) {
+        return users.securityPassword(password);
     }
 
 
     @Override
-    public boolean addUser(User user){
-        return users.addUsers(user);
+    public boolean checkName(String userName){
+        return users.checkName(userName);
     }
+
+    @Override
+    public boolean checkLogin(User user){
+        return users.User_Login(user);
+    }
+
 }

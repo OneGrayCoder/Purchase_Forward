@@ -15,19 +15,12 @@ import java.util.List;
 //接口作为一个公共模板,需要方法,直接在这里添加
 //然后也可以用接口创建对象
 public interface UserDao {
+    //regist方法
+    boolean regist(User user);
 
-    //将数据库中的一些常规操作抽出到接口中
-/*    ResultSet query(PreparedStatement pre, Object ...obj);
-    int update(PreparedStatement pre, Object ...obj);
-    void close(PreparedStatement pre,Connection con);
-    void close(ResultSet rs,PreparedStatement pre,Connection con);*/
+    String securityPassword(String password);
 
-    boolean checkUser(User user);
+    boolean checkName(String userName);
 
-    List<User> findUser();
-
-    int userNumber();
-
-    boolean addUsers(User user);
-
+    boolean User_Login(User user);
 }

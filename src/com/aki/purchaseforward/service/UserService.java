@@ -10,12 +10,16 @@ import java.util.List;
  */
 public interface UserService {
 
-    boolean checkUser(User user);
 
-    List<User> findAllUser();
+    boolean regist(User user);
 
-    //查找所有用户
-    int userNumber();
+    String securityPass(String password);
 
-    boolean addUser(User user);
+
+    //检查是否重名
+    boolean checkName(String username);
+
+
+    boolean checkLogin(User user);
+
 }

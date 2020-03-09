@@ -11,7 +11,7 @@ import java.io.IOException;
  * @AUTUOR QXW
  * @CREATE 2020/2/29 19:39
  */
-@WebFilter(value = "/",initParams = {@WebInitParam(name="encode",value = "utf-8")})
+@WebFilter(value = "/*",initParams = {@WebInitParam(name="encode",value = "UTF-8")})
 public class EncodingFilter implements Filter {
     private String encode;
     public void destroy() {

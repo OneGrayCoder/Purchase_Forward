@@ -10,14 +10,5 @@ import java.util.List;
  */
 
 public interface GoodService {
-    boolean addGood(Good good);
 
-    List<Good> queryGood(Good good);
-
-    List<Good> findAll(int pageNow,int pageSize);
-    int getTotalRecord();
-
-    boolean updateGood(Good good);
-
-    boolean deleteGood(int id);
 }
