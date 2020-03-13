@@ -50,7 +50,7 @@ public class GoodServlet extends HttpServlet {
             updateCar(request,response);
         }else if (reqType.equals("flow")){
             lookForFlow(request,response);
-        }else if(reqType.equals("caclator")){
+        }else if(reqType.equals("caculator")){
             caculator(request,response);
         }
     }
@@ -70,10 +70,9 @@ public class GoodServlet extends HttpServlet {
             }
             request.setAttribute("count",count);
             request.setAttribute("amount",amount);
-            queryByCar(request,response,car);
-            response.getWriter().print("<script>alert('支付成功!金额为:"+amount+"')</script>");
+            response.getWriter().print("<script>window.alert('支付成功总金额为:"+ amount+"')</script>");
         }else{
-            response.getWriter().print("<script>window.reload(true)</script>");
+            response.getWriter().print("<script>window.alert('您的购物车没有商品!')</script>");
         }
 
 

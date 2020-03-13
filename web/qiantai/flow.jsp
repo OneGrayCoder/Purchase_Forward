@@ -23,6 +23,10 @@
 		//加一个前端验证,主要作用是根据用户修改的数量实时算出总价格
 		//只需要获得当前商品的小计即可
 
+		function caclu() {
+			window.location.href = "${pageContext.request.contextPath}/qiantai/GoodSvl?reqType=caculator"
+        }
+
 	</script>
 </head>
 <body>
@@ -104,7 +108,7 @@
 				<a href="###"><img src="images/continue.gif" ONCLICK="continueShop()" alt="continue" /></a>
 			</td>
 			<td bgcolor="#ffffff" align="right">
-				<a href="${pageContext.request.contextPath}/qiantai/GoodSvl?reqType=caculator"><img src="images/checkout.gif" alt="checkout" /></a>
+				<img src="images/checkout.gif" alt="checkout" onclick="caclu()" />
 			</td>
 		</tr>
 	</table>
