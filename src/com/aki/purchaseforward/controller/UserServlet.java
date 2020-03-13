@@ -130,7 +130,7 @@ public class UserServlet extends HttpServlet {
             if (b){
                 //直接跳转到主页面
                 session1.setAttribute("username",username);
-                response.sendRedirect("main.jsp");
+                response.sendRedirect("GoodSvl?reqType=main");
             }else {
                 loginInfo = "登录失败";
                 session1.setAttribute("loginInfo",loginInfo);
@@ -188,7 +188,7 @@ public class UserServlet extends HttpServlet {
             session.setAttribute("user",user);
             session.setMaxInactiveInterval(60*60);
             try {
-                response.sendRedirect("main.jsp");
+                response.sendRedirect("GoodSvl?reqType=main");
             } catch (IOException e) {
                 e.printStackTrace();
             }

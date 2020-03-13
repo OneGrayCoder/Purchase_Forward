@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<%@page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -16,7 +17,7 @@
 	    	<li class="userInfo">
   				<font id="ECS_MEMBERZONE">
 					<div id="append_parent"></div>
- 					欢迎光临本店&nbsp;&nbsp;&nbsp;&nbsp;
+ 					欢迎${username}${user.username}光临本店&nbsp;&nbsp;&nbsp;&nbsp;
  				</font>
    			</li>
       	</ul>

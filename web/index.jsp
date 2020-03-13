@@ -7,4 +7,5 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:redirect url="qiantai/main.jsp"/>
+<!--向主页面发请求-->
+<c:redirect url="qiantai/GoodSvl?reqType=main"/>

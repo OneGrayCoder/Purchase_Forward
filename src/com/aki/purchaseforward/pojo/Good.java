@@ -20,6 +20,20 @@ pic varchar(20)
     //pic 是啥
     //pic是上传的商品文件的名称
     private String pic;
+    Integer count;
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
     public Good(){
     }
 

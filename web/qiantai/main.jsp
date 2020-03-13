@@ -5,6 +5,13 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title></title>
+	<script>
+		function addCar(id) {
+			window.location.href = "${pageContext.request.contextPath}/qiantai/GoodSvl?reqType=addCar&id="+id;
+        }
+
+
+	</script>
 </head>
 <body>
 <!--LOGO欢迎信息和登陆注册功能-->
@@ -29,10 +36,10 @@
 
 <!--顶层功能导航栏-->
 <div id="mainNav" class="clearfix">
-	<a href="main.jsp" class="cur">首页<span></span></a>
+	<a href="GoodSvl?reqType=main" class="cur">首页<span></span></a>
 	<a href="###">买家必看<span></span></a>
 	<a href="###">优惠活动<span></span></a>
-	<a href="flow.jsp">查看购物车<span></span></a>
+	<a href="${pageContext.request.contextPath}/qiantai/GoodSvl?reqType=flow">查看购物车<span></span></a>
 	<a href="###">报价单<span></span></a>
 	<a href="###">留言板<span></span></a>
 	<a href="###">团购商品<span></span></a>
@@ -59,25 +66,22 @@
     	</div>
     	<div class="blank5"></div>
 		<!--左侧购物车-->
-		<div class="cart" id="ECS_CARTINFO">
- 			<a href="flow.php.htm" title="查看购物车">您的购物车中有 0 件商品，总计金额 ￥0.00元。</a>
+		<div class="cart" id="ECS_CARTINFO"><!--需要算出此购物车中共有多少件商品-->
+ 			<a href="#" title="查看购物车">您的购物车中有${requestScope.count}件商品，总计金额 ￥${requestScope.amount}元。</a>
 		</div>
 		<div class="blank5"></div>
 		<!--左侧分类栏-->
 		<div class="box">
- 			<div class="box_1">
+ 			<div class="box_1"><!--商品类别，当用户点击商品类别时-->
+				<c:forEach items="${requestScope.list}" var="list">
   				<div id="category_tree">
          			<dl>
      					<dt>
-							<a href="category.php-id=12.htm">类别1</a>
-						</dt>
-	       			</dl>
-					<dl>
-     					<dt>
-							<a href="category.php-id=12.htm">类别2</a>
+							<a href="GoodSvl?reqType=main&goodtype=${list}">${list}</a>
 						</dt>
 	       			</dl>
   				</div>
+				</c:forEach>
  			</div>
 		</div>
 		<div class="blank5"></div>
@@ -89,27 +93,15 @@
   				<div class="itemTit" id="itemBest"></div>
   				<div id="show_best_area" class="clearfix goodsBox">
 					<!--单个商品展示信息-->
+					<c:forEach items="${requestScope.goodList}" var="goodList">
       				<div class="goodsItem">
          				<span class="best"></span>
-           				<a href="flow.jsp">
-							<img src="" alt="测试商品1" class="goodsimg" /></a>
-           				<p><a href="flow.jsp" title="测试商品1">测试商品1</a></p>
-           				<font class="f1">￥55元</font>
+           				<%--<a href="flow.jsp">&lt;%&ndash;a标签被加载时会发送get请求来请求图片&ndash;%&gt;--%>
+							<img src="GoodSvl?reqType=img&pic=${goodList.pic}" onclick="addCar(${goodList.id})" alt="测试商品1" class="goodsimg" /></a>
+           				<p><a href="GoodSvl?reqType=addCar&id=${goodList.id}" title="测试商品1">${goodList.goodname}</a></p>
+           				<font class="f1">￥${goodList.price}元</font>
         			</div>
-        			<div class="goodsItem">
-         				<span class="best"></span>
-           				<a href="flow.jsp">
-							<img src="" alt="测试商品1" class="goodsimg" /></a>
-           				<p><a href="flow.jsp" title="测试商品1">测试商品1</a></p>
-           				<font class="f1">￥55元</font>
-        			</div>
-        			<div class="goodsItem">
-         				<span class="best"></span>
-           				<a href="flow.jsp">
-							<img src="" alt="测试商品1" class="goodsimg" /></a>
-           				<p><a href="flow.jsp" title="测试商品1">测试商品1</a></p>
-           				<font class="f1">￥55元</font>
-        			</div>
+					</c:forEach>
     				<div class="more"><a href="###"><img src="images/more.gif" /></a></div>
     			</div>
 			</div>
@@ -123,11 +115,11 @@
 <div id="bottomNav" class="box">
 	<div class="box_1">
 		<div class="links clearfix">
-			[<a href="###" target="_blank" title="友情连接1">友情连接1</a>]
-			[<a href="###" target="_blank" title="友情连接1">友情连接2</a>]
-			[<a href="###" target="_blank" title="友情连接1">友情连接3</a>]
-			[<a href="###" target="_blank" title="友情连接1">友情连接4</a>]
-			[<a href="###" target="_blank" title="友情连接1">友情连接5</a>]
+			[<a href="https://www.baidu.com" target="_blank" title="友情连接1">友情连接1</a>]
+			[<a href="https://www.bilibili.com" target="_blank" title="友情连接1">友情连接2</a>]
+			[<a href="https://www.taobao.com" target="_blank" title="友情连接1">友情连接3</a>]
+			[<a href="https://www..com" target="_blank" title="友情连接1">友情连接4</a>]
+			[<a href="https://www.baidu.com" target="_blank" title="友情连接1">友情连接5</a>]
 		</div>
 	</div>
 </div>
